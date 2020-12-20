@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "YoutubeMp3Downloader/1.0.0": {
+        "dependencies": {
+          "YoutubeMp3DownloaderLibrary": "1.0.0"
+        },
+        "runtime": {
+          "YoutubeMp3Downloader.dll": {}
+        }
+      },
+      "YoutubeMp3DownloaderLibrary/1.0.0": {
+        "runtime": {
+          "YoutubeMp3DownloaderLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "YoutubeMp3Downloader/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "YoutubeMp3DownloaderLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

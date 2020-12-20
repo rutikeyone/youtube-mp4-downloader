@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\YoutubeBackground.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YoutubeMp3DownloaderLibrary\YoutubeMp3DownloaderLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Background\YoutubeBackground.jpg" />
+  </ItemGroup>
+
+</Project>
