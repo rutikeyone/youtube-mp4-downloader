@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:YoutubeMp3Downloader"
         xmlns:mainviewmodel="clr-namespace:YoutubeMp3DownloaderLibrary.ViewModel;assembly=YoutubeMp3DownloaderLibrary"
         mc:Ignorable="d"
-        Width="600" Height="350" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Width="600" Height="450" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Window.DataContext>
         <mainviewmodel:MainViewModel/>
     </Window.DataContext>
@@ -16,7 +16,7 @@
                 <ImageBrush ImageSource="/View/Background/YoutubeBackground.jpg"/>
             </Grid.Background>
         </Grid>
-        <Grid Height="185" Background="#ECE9E4">
+        <Grid Height="200" Background="#ECE9E4">
             <StackPanel VerticalAlignment="Center">
                 <Grid Height="70" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
@@ -27,11 +27,14 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
+                    <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
                     <Button  Grid.Row="0" Content="Download" Grid.Column="1"></Button>
-                    <Label HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>
+                    <Label FontSize="13" FontWeight="DemiBold" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>
                 </Grid>
             </StackPanel>
+        </Grid>
+        <Grid Background="#ECE9E4" Height="85">
+        
         </Grid>
     </StackPanel>
 </Window>
