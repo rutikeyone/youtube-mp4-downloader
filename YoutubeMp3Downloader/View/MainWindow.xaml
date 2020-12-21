@@ -6,11 +6,14 @@
         xmlns:local="clr-namespace:YoutubeMp3Downloader"
         xmlns:mainviewmodel="clr-namespace:YoutubeMp3DownloaderLibrary.ViewModel;assembly=YoutubeMp3DownloaderLibrary"
         mc:Ignorable="d"
-        Width="600" Height="465" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Width="600" Height="525" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.DataContext>
         <mainviewmodel:MainViewModel/>
     </Window.DataContext>
     <StackPanel>
+        <Canvas Height="30">
+            <Button Canvas.Right="2.5" Canvas.Top="2.5" Content="x" Style="{StaticResource Close}"></Button>
+        </Canvas>
         <Grid Height="150">
             <Grid.Background>
                 <ImageBrush ImageSource="/View/Background/YoutubeBackground.jpg"/>
@@ -29,11 +32,28 @@
                     </Grid.RowDefinitions>
                     <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
                     <Button  Grid.Row="0" Content="Download" Grid.Column="1"></Button>
-                    <Label FontSize="15" FontWeight="Light" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>
+                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>
                 </Grid>
             </StackPanel>
         </Grid>
-        <Grid Background="#DEDBD6" Height="100">
+        <Grid Background="#DEDBD6" Height="150">
+            <Grid  Width="350" Height="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource FontLight}" Content="Имя:"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource FontLight}" Content="Скорость:"></Label>
+                <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource FontLight}" Content="Размер файла:"></Label>
+                <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource FontLight}" Content="Пример текста"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource FontLight}" Content="Пример скорости"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource FontLight}" Content="Пример размара файла"></Label>
+            </Grid>
         </Grid>
     </StackPanel>
 </Window>

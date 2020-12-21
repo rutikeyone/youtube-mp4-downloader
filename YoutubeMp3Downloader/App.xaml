@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:YoutubeMp3Downloader"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="FontLight">
+            <Setter Property="Control.FontSize" Value="15"></Setter>
+            <Setter Property="Control.FontWeight" Value="Light"></Setter>
+        </Style>
+        <Style x:Key="Close">
+            <Setter Property="Button.Height" Value="25"></Setter>
+            <Setter Property="Button.Width" Value="25"></Setter>
+            <Setter Property="Button.VerticalContentAlignment" Value="Top"></Setter>
+            <Setter Property="Button.HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Button.FontSize" Value="14"></Setter>
+            <Setter Property="Button.Background" Value="#B61010"></Setter>
+            <Setter Property="Button.Foreground" Value="#F7F7F7"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
