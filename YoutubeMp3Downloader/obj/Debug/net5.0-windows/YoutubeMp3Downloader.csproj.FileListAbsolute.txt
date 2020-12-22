@@ -24,3 +24,7 @@ C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\obj\D
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\obj\Debug\net5.0-windows\YoutubeMp3Downloader.pdb
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\obj\Debug\net5.0-windows\YoutubeMp3Downloader.genruntimeconfig.cache
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\obj\Debug\net5.0-windows\App.baml
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\GalaSoft.MvvmLight.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll
