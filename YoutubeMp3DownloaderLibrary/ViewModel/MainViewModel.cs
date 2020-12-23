@@ -1,6 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using System.Windows;
+using System.Windows.Input;
 using YoutubeMp3DownloaderLibrary.Model;
+using YoutubeMp3DownloaderLibrary.Model.Commands;
+using YoutubeMp3DownloaderLibrary.Model.Dialogs;
 using YoutubeMp3DownloaderLibrary.Model.UI;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text.DataFile;
 using YoutubeMp3DownloaderLibrary.ViewModel.Base;
@@ -14,6 +17,7 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         private UIClose Close;
         private Sing Sing;
         private Data Data;
+        private Dialog Dialog;
 
         #endregion
 
@@ -60,7 +64,19 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
 
         #endregion
 
+        #region UI Url
+
+        private string url = null;
+        public string Url
+        {
+            get => url;
+            set => SetProperty(ref url, value);
+        }
+
         #endregion
+
+        #endregion
+
         #region Close command
         public RelayCommand<Window> CloseMainWindow { get; private set; }
 
@@ -72,14 +88,29 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
             }
         }
 
-        #endregion 
+        #endregion
 
+        #region Download command
+
+        public ICommand Download { get; set; }
+
+        public bool CanDownloadExecute(object sender) => true;
+
+        public void DownloadExecute(object sender)
+        {
+          
+        }
+
+        #endregion
+
+        #region Constructor
         public MainViewModel()
         {
             //Initial UI objects
             Sing = new();
             Close = new();
             Data = new();
+            Dialog = new();
 
             //Initial UI text
             singText = Sing.GetInitial();
@@ -89,9 +120,10 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
 
             //Initial Command
             CloseMainWindow = new RelayCommand<Window>(this.CloseWindow);
+            Download = new ActionCommand(DownloadExecute, CanDownloadExecute);
         }
 
-
+        #endregion
 
     }
 }

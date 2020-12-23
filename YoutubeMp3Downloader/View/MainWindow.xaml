@@ -31,8 +31,8 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
-                    <Button  Grid.Row="0" Content="Download" Grid.Column="1"></Button>
+                    <TextBox Text="{Binding Url}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
+                    <Button Command="{Binding Download}"  Grid.Row="0" Content="Download" Grid.Column="1"></Button>
                     <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>
                 </Grid>
             </StackPanel>

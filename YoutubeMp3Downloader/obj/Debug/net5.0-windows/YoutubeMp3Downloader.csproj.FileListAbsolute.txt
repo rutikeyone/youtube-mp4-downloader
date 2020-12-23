@@ -28,3 +28,8 @@ C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\D
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\GalaSoft.MvvmLight.Platform.dll
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\GalaSoft.MvvmLight.dll
 C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\System.Windows.Interactivity.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\MediaToolkit.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\libvideo.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\Microsoft.WindowsAPICodePack.dll
+C:\Users\Rutikeyone\source\repos\YoutubeMp3Downloader\YoutubeMp3Downloader\bin\Debug\net5.0-windows\Microsoft.WindowsAPICodePack.Shell.dll
