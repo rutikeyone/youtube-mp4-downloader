@@ -31,6 +31,19 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
+                    <TextBox IsReadOnly="True" Text="{Binding Path}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
+                    <Button Command="{Binding Select}"  Grid.Row="0" Content="Select folder" Grid.Column="1"></Button>
+                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding StateFolder}"/>
+                </Grid>
+                <Grid Height="70" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="325"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
                     <TextBox Text="{Binding Url}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
                     <Button Command="{Binding Download}"  Grid.Row="0" Content="Download" Grid.Column="1"></Button>
                     <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding SingText}"/>

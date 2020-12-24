@@ -13,7 +13,7 @@ namespace YoutubeMp3DownloaderLibrary.Model.Dialogs
                 case CommonFileDialogResult.Ok:
                     return CommonDialog.FileName;
             }
-            return "No folder selected";
+            return "Вы не выбрали папку";
         }
     }
     }

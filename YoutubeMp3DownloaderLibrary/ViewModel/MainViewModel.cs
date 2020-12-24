@@ -5,6 +5,7 @@ using YoutubeMp3DownloaderLibrary.Model;
 using YoutubeMp3DownloaderLibrary.Model.Commands;
 using YoutubeMp3DownloaderLibrary.Model.Dialogs;
 using YoutubeMp3DownloaderLibrary.Model.UI;
+using YoutubeMp3DownloaderLibrary.Model.UI.Text;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text.DataFile;
 using YoutubeMp3DownloaderLibrary.ViewModel.Base;
 
@@ -18,6 +19,7 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         private Sing Sing;
         private Data Data;
         private Dialog Dialog;
+        private StateFolder State;
 
         #endregion
 
@@ -75,6 +77,29 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
 
         #endregion
 
+        #region UI Folder
+
+        private string stateFolder = null;
+        public string StateFolder
+        {
+            get => stateFolder;
+            set => SetProperty(ref stateFolder, value);
+        }
+
+        #endregion
+
+        #region UI path
+
+        private string path = null;
+        public string Path
+        {
+            get => path;
+            set => SetProperty(ref path, value);
+        }
+
+        #endregion
+
+
         #endregion
 
         #region Close command
@@ -90,11 +115,24 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
 
         #endregion
 
+        #region Select command
+
+        public ICommand Select { get; set; }
+
+        public bool CanSelectExecute(object sender) => true;
+
+        public void SelectExecute(object sender)
+        {
+            Path = Dialog.GetFolder();
+        }
+
+        #endregion
+
         #region Download command
 
         public ICommand Download { get; set; }
 
-        public bool CanDownloadExecute(object sender) => true;
+        public bool CanDownloadExecute(object sender) => path != null && path != "Вы не выбрали папку";
 
         public void DownloadExecute(object sender)
         {
@@ -111,16 +149,19 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
             Close = new();
             Data = new();
             Dialog = new();
+            State = new();
 
             //Initial UI text
             singText = Sing.GetInitial();
             nameFile = Data.GetInitial(new DataName());
             speedInternet = Data.GetInitial(new DataSpeed());
             sizeFile = Data.GetInitial(new DataSize());
+            StateFolder = State.GetInitialState();
 
             //Initial Command
             CloseMainWindow = new RelayCommand<Window>(this.CloseWindow);
             Download = new ActionCommand(DownloadExecute, CanDownloadExecute);
+            Select = new ActionCommand(SelectExecute, CanSelectExecute);
         }
 
         #endregion
