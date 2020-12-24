@@ -4,6 +4,7 @@ using System.Windows.Input;
 using YoutubeMp3DownloaderLibrary.Model;
 using YoutubeMp3DownloaderLibrary.Model.Commands;
 using YoutubeMp3DownloaderLibrary.Model.Dialogs;
+using YoutubeMp3DownloaderLibrary.Model.Downloader;
 using YoutubeMp3DownloaderLibrary.Model.UI;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text.DataFile;
@@ -20,6 +21,7 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         private Data Data;
         private Dialog Dialog;
         private StateFolder State;
+        private DownloaderMp3 Downloader;
 
         #endregion
 
@@ -132,11 +134,11 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
 
         public ICommand Download { get; set; }
 
-        public bool CanDownloadExecute(object sender) => path != null && path != "Вы не выбрали папку";
+        public bool CanDownloadExecute(object sender) => !string.IsNullOrWhiteSpace(Url) && Path != "Вы не выбрали папку" && !string.IsNullOrWhiteSpace(Path);
 
         public void DownloadExecute(object sender)
         {
-          
+            Downloader.SaveMP3(Path, Url);
         }
 
         #endregion
@@ -150,6 +152,7 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
             Data = new();
             Dialog = new();
             State = new();
+            Downloader = new();
 
             //Initial UI text
             singText = Sing.GetInitial();
