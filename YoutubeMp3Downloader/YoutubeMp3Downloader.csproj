@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Mp3.png" />
     <None Remove="View\Mp3Icon.png" />
     <None Remove="View\YoutubeBackground.jpg" />
   </ItemGroup>
@@ -17,7 +18,7 @@
 
   <ItemGroup>
     <Resource Include="View\Background\YoutubeBackground.jpg" />
-    <Resource Include="View\Background\Mp3Icon.png" />
+    <Resource Include="View\Background\Mp3.png" />
   </ItemGroup>
 
 </Project>
