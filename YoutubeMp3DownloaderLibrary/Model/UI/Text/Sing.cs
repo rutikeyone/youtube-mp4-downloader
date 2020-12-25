@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using YoutubeMp3DownloaderLibrary.Model.UI.Text.Abstract;
 
 namespace YoutubeMp3DownloaderLibrary.Model
 {
-    public class Sing
+    public class Sing : UIText
     {
-        public string GetInitial()
-        {
-            return "Вставьте ссылку и нажмите на кнопку для начала загрузки видео";
-        }
+
     }
 }

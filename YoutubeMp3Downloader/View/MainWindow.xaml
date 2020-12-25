@@ -50,23 +50,25 @@
                 </Grid>
             </StackPanel>
         </Grid>
-        <Grid Background="#DEDBD6" Height="150">
-            <Grid  Width="350" Height="120">
+        <Grid Background="#DEDBD6" Height="145">
+            <Grid  Width="375" Height="120">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="125"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="125"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource FontLight}" Content="Имя:"></Label>
-                <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource FontLight}" Content="Скорость:"></Label>
-                <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource FontLight}" Content="Размер файла:"></Label>
-                <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource FontLight}" Content="{Binding NameFile}"></Label>
-                <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource FontLight}" Content="{Binding SpeedInternet}"></Label>
-                <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource FontLight}" Content="{Binding SizeFile}"></Label>
+                <Image Grid.Column="0" Grid.RowSpan="3" Source="/View/Background/Mp3Icon.png" Height="100"/>
+                <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource FontLight}" Content="Имя:"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource FontLight}" Content="Скорость:"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource FontLight}" Content="Размер файла:"></Label>
+                <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource FontLight}" Content="{Binding NameFile}"></Label>
+                <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource FontLight}" Content="{Binding SpeedInternet}"></Label>
+                <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource FontLight}" Content="{Binding SizeFile}"></Label>
             </Grid>
         </Grid>
     </StackPanel>

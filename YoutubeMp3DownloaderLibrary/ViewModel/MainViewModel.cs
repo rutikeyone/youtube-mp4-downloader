@@ -8,6 +8,7 @@ using YoutubeMp3DownloaderLibrary.Model.Downloader;
 using YoutubeMp3DownloaderLibrary.Model.UI;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text;
 using YoutubeMp3DownloaderLibrary.Model.UI.Text.DataFile;
+using YoutubeMp3DownloaderLibrary.Model.UI.Text.Abstract;
 using YoutubeMp3DownloaderLibrary.ViewModel.Base;
 
 namespace YoutubeMp3DownloaderLibrary.ViewModel
@@ -17,10 +18,10 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         #region UI objects
 
         private UIClose Close;
-        private Sing Sing;
+        private UIText Sing;
         private Data Data;
         private Dialog Dialog;
-        private StateFolder State;
+        private UIText State;
         private DownloaderMp3 Downloader;
 
         #endregion
@@ -63,7 +64,7 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         public string SizeFile
         {
             get => sizeFile;
-            set => SetProperty(ref speedInternet, value);
+            set => SetProperty(ref sizeFile, value);
         }
 
         #endregion
@@ -135,10 +136,22 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         public ICommand Download { get; set; }
 
         public bool CanDownloadExecute(object sender) => !string.IsNullOrWhiteSpace(Url) && Path != "Вы не выбрали папку" && !string.IsNullOrWhiteSpace(Path);
+        /*
+         Если мы во время загрузки мы получим исключение то значит ссылка на видео некорректна 
+         уведомим об этом загружающего
 
+         */
         public void DownloadExecute(object sender)
         {
-            Downloader.SaveMP3(Path, Url);
+            try
+            {
+                Downloader.SaveMP3(Path, Url);
+            }
+
+            catch
+            {
+                SingText = Sing.GetError("Введите корректный адрес ссылки"); 
+            }
         }
 
         #endregion
@@ -147,19 +160,19 @@ namespace YoutubeMp3DownloaderLibrary.ViewModel
         public MainViewModel()
         {
             //Initial UI objects
-            Sing = new();
+            Sing = new Sing();
             Close = new();
             Data = new();
             Dialog = new();
-            State = new();
+            State = new StateFolder();
             Downloader = new();
 
             //Initial UI text
-            singText = Sing.GetInitial();
-            nameFile = Data.GetInitial(new DataName());
-            speedInternet = Data.GetInitial(new DataSpeed());
-            sizeFile = Data.GetInitial(new DataSize());
-            StateFolder = State.GetInitialState();
+            SingText = Sing.GetInitial("Вставьте ссылку и нажмите на кнопку для начала загрузки видео");
+            NameFile = Data.GetInitial(new DataName());
+            SpeedInternet = Data.GetInitial(new DataSpeed());
+            SizeFile = Data.GetInitial(new DataSize());
+            StateFolder = State.GetInitial("Для начала загрузки видео выберите папку загрузки");
 
             //Initial Command
             CloseMainWindow = new RelayCommand<Window>(this.CloseWindow);
