@@ -22,18 +22,27 @@
         </Grid>
         <Grid Height="200" Background="#ECE9E4">
             <StackPanel VerticalAlignment="Center">
-                <Grid Height="70" HorizontalAlignment="Center">
+                <Grid Height="70" HorizontalAlignment="Center" Width="450">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="325"/>
-                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <TextBox IsReadOnly="True" Text="{Binding Path}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="300" Grid.Column="0" FontSize="22" FontWeight="Light" />
-                    <Button Command="{Binding Select}"  Grid.Row="0" Content="Select folder" Grid.Column="1"></Button>
-                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding StateFolder}"/>
+                    <TextBox IsReadOnly="True" Text="{Binding Path}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="22" FontWeight="Light" />
+                    <ComboBox Width="85" Grid.Row="0" Grid.Column="1" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <ComboBoxItem>144 p</ComboBoxItem>
+                        <ComboBoxItem>240 p</ComboBoxItem>
+                        <ComboBoxItem>360 p</ComboBoxItem>
+                        <ComboBoxItem>480 p</ComboBoxItem>
+                        <ComboBoxItem>720 p</ComboBoxItem>
+                        <ComboBoxItem>1080 p</ComboBoxItem>
+                    </ComboBox>
+                    <Button Command="{Binding Select}"  Grid.Row="0" Content="Select folder" Grid.Column="2"></Button>
+                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding StateFolder}"/>
                 </Grid>
                 <Grid Height="70" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>

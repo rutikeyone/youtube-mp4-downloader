@@ -7,8 +7,8 @@
         <Style x:Key="FontLight">
             <Setter Property="Control.FontSize" Value="15"></Setter>
             <Setter Property="Control.FontWeight" Value="Light"></Setter>
-            <Setter Property="Control.HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Control.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"></Setter>
         </Style>
         <Style x:Key="Close">
             <Setter Property="Button.Height" Value="25"></Setter>
