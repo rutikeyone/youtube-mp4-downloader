@@ -7,6 +7,7 @@ using YoutubeExplode.Videos.Streams;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Downloader
 {
+    //Класс, реализующий логику загрузки видео
     public class DownloaderMp4
     {
         public event Action<string> Notifier;

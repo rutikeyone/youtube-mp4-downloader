@@ -2,6 +2,7 @@
 
 namespace YoutubeMp4DownloaderLibrary.Model.Dialogs
 {
+    //Класс, реализующий логику выбора папки
     public class Dialog
     {
         public string GetFolder()

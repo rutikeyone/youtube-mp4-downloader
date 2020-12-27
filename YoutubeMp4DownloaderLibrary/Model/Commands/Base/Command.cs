@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Commands.Base
 {
+    //Абстрактный класс реализующий ICommand
     public abstract class Command : ICommand
     {
         public event EventHandler CanExecuteChanged {

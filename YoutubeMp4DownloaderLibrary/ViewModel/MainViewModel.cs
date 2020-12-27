@@ -18,22 +18,25 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
     //Данный класс определяет view model для главного окна
     public partial class MainViewModel : BaseViewModel
     {
-        private string[] FileLines; //Массив необходим для работы загрузчика видео
-        private YoutubeExplode.Videos.Video Video; //Переменная для хранения видео
+        //Список объектов используемых в MainViewMode
+        #region Objects
 
-        #region objects
-
-        private UIClose Close; //Объект для закрытия окна
-        private UIText Sing;
-        private Data Data;
-        private Dialog Dialog; //Объект для выбора папки
-        private UIText State;
-        private DownloaderMp4 Downloader;
-        private Youtube Youtube;
-        private YoutubeClient Client;
+        private UIClose Close { get; set; } //Объект для закрытия окна
+        private UIText Sing { get; set; } //Объект для установки значения текстового UI (текстовый бокс под ссылкой на видео)
+        private Data Data { get; set; } //Объект являющийся клиентом для паттерна стратегия
+        private Dialog Dialog { get; set; } //Объект для выбора папки
+        private UIText State { get; set; } //Объект для установки значения текстового UI (текстовый бокс под путем на папку)
+        private DownloaderMp4 Downloader { get; set; } //Основной объект-загрузчик видео
+        
+        //Данные свойства необходимы для обработки загрузки видео
+        private Youtube Youtube { get; set; } //Объект необходим для получения валидного id видео
+        private YoutubeClient Client { get; set; } //Объект необходим для загрузки видео
+        private string[] FileLines { get; set; } //Массив необходим для работы загрузчика видео
+        private YoutubeExplode.Videos.Video Video { get; set; } //Переменная для хранения видео
 
         #endregion
 
+        //Поля и свойства необходимые для установки значения в текстовых Ui в MainWindow
         #region UI text
 
         #region UI Sing text
@@ -113,6 +116,9 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
 
         #endregion
 
+        //Комманды взаимодействия Ui с кодом
+        #region Commands
+
         #region Close command
         public RelayCommand<Window> CloseMainWindow { get; private set; }
 
@@ -143,22 +149,27 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
 
         public ICommand Download { get; set; }
 
+        //Если путь до папки установлен и ссылка на видео есть, кнопку загрузки можно нажать
         public bool CanDownloadExecute(object sender) => !string.IsNullOrWhiteSpace(Url) && Path != "No selected folder" && !string.IsNullOrWhiteSpace(Path);
 
+        //Данный метод описывает логику загрузки видео
         public async void DownloadExecute(object sender)
         {
             await Task.Run(() =>
             {
                 try
                 {
-                    FileLines = Youtube.GetLine(Url);
-                    Downloader.SaveMP4(FileLines, Path);
+                    FileLines = Youtube.GetLine(Url); //Получаем id видео
+                    Downloader.SaveMP4(FileLines, Path); //Загружаем видео
+                    
+                    //Получаем информация о видео
                     Video = Client.Videos.GetAsync(Url).Result;
                     NameFile = Data.GetData(new DataName(), Video).Result;
                     DurationVideo = Data.GetData(new DataDuration(), Video).Result;
                     AuthorVideo = Data.GetData(new DataAuthor(), Video).Result;
                 }
 
+                //Если есть исключение, то выводим информацию о том что ссылка некорректна 
                 catch
                 {
                     SingText = Sing.SetData("Enter the correct link address");
@@ -168,11 +179,13 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
 
         #endregion
 
+        #endregion
+
+        //Обычный конструктор без параметров
         #region Constructor
         public MainViewModel()
         {
-            Client = new();
-            //Initial UI objects
+            //Инициализируем объекты
             Sing = new Sing();
             Close = new();
             Data = new();
@@ -180,23 +193,31 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
             State = new StateFolder();
             Downloader = new();
             Youtube = new();
+            Client = new();
 
-            //Initial UI text
+            //Задаем базовое значение текстовых Ui 
             SingText = Sing.SetData("Paste the link and click on the button to start downloading the video");
             NameFile = Data.SetInitial(new DataName());
             DurationVideo = Data.SetInitial(new DataDuration());
             AuthorVideo = Data.SetInitial(new DataAuthor());
             StateFolder = State.SetData("To start downloading the video, select the download folder");
 
-            //Initial Command
+            //Инициализируем команды
             CloseMainWindow = new RelayCommand<Window>(this.CloseWindow);
             Download = new ActionCommand(DownloadExecute, CanDownloadExecute);
             Select = new ActionCommand(SelectExecute, CanSelectExecute);
 
+            //Добавляем подписчика для события
             Downloader.Notifier += SetValueSingText;
         }
 
         #endregion
-
+        
+        /*Данный метод устанавливает значение для текстового Ui, я не могу его вынести из MainViewModel 
+         * поскольку мне нужно работать с Ui*/
+        public void SetValueSingText(string message)
+        {
+            SingText = message;
+        }
     }
 }

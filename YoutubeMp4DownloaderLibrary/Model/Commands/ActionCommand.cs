@@ -3,6 +3,7 @@ using YoutubeMp4DownloaderLibrary.Model.Commands.Base;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Commands
 {
+    //Класс, реализующий абстрактный класс команды
     public class ActionCommand : Command
     {
         private readonly Action<object> _Execute;

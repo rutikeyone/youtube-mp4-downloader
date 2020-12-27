@@ -3,6 +3,7 @@ using YoutubeExplode;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Downloader
 {
+    //Класс, отвечающий за получение id видео
     public class Youtube
     {
         const string YoutubeTagSignature = "?v=";
