@@ -1,5 +1,6 @@
 ﻿using System;
-using VideoLibrary;
+using System.Threading.Tasks;
+using YoutubeExplode;
 using YoutubeMp4DownloaderLibrary.Model.UI.Text.Interfaces;
 
 namespace YoutubeMp4DownloaderLibrary.Model.UI.Text.DataFile
@@ -11,9 +12,9 @@ namespace YoutubeMp4DownloaderLibrary.Model.UI.Text.DataFile
             return data.SetInitialData();
         }
 
-        public string GetData(IData data, YouTubeVideo view)
+        public async Task<string> GetData(IData data, YoutubeExplode.Videos.Video video)
         {
-            return data.GetData(view);
+            return data.GetData(video);
         }
     }
 }

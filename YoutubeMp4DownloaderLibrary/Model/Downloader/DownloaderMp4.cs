@@ -1,28 +1,22 @@
 ﻿using System;
 using System.IO;
-using VideoLibrary;
-using YoutubeMp4DownloaderLibrary.Model.Downloader.PartsDownloader;
+using System.Threading.Tasks;
+using System.Windows;
+using YoutubeExplode;
+using YoutubeExplode.Videos.Streams;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Downloader
 {
     public class DownloaderMp4
     {
         public event Action<string> Notifier;
-        private CustomEngine CustomEngine;
-
-        public DownloaderMp4()
-        {
-            CustomEngine = new();
-        }
-        //I will make this method async
-        public void SaveMP3(string saveToFolder, YouTubeVideo view)
+        public async Task SaveMP4(string[] fileLines, string pathToSaveVideos)
         {
                 Notifier?.Invoke("The download has started");
-                //Комбинируем путь видео
-                string videoPath = Path.Combine(saveToFolder, view.FullName);
-                //Получаем байты
-                File.WriteAllBytes(videoPath, view.GetBytes());
-
+                var Client = new YoutubeClient();
+                var StreamInfoSet = await Client.Videos.Streams.GetManifestAsync(fileLines[1]);
+                var StreamInfo = StreamInfoSet.GetMuxed().WithHighestVideoQuality();
+                await Client.Videos.Streams.DownloadAsync(StreamInfo, pathToSaveVideos + "\\" + fileLines[1] + ".mp4");
                 Notifier?.Invoke("Download completed");
         
 

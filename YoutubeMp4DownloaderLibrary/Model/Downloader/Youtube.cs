@@ -1,12 +1,16 @@
-﻿using VideoLibrary;
+﻿using System;
+using YoutubeExplode;
 
 namespace YoutubeMp4DownloaderLibrary.Model.Downloader
 {
     public class Youtube
     {
-        public YouTubeVideo GetVideo(string url)
+        const string YoutubeTagSignature = "?v=";
+        public string[] GetLine(string url)
         {
-            return YouTube.Default.GetVideo(url);
+            YoutubeClient Client = new YoutubeClient();
+            string[] FileLines = url.Split(new string[] { YoutubeTagSignature }, StringSplitOptions.None);
+            return FileLines;
         }
     }
 }

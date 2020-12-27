@@ -40,10 +40,6 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "MediaToolkit": {
-              "target": "Package",
-              "version": "[1.1.0.1, )"
-            },
             "MvvmLightLibs": {
               "target": "Package",
               "version": "[5.4.1.1, )"
@@ -52,13 +48,13 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
-            "VideoLibrary": {
-              "target": "Package",
-              "version": "[3.0.8, )"
-            },
             "WindowsAPICodePack-Shell": {
               "target": "Package",
               "version": "[1.1.1, )"
+            },
+            "YoutubeExplode": {
+              "target": "Package",
+              "version": "[5.1.9, )"
             }
           },
           "imports": [

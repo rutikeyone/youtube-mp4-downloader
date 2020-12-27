@@ -1,6 +1,4 @@
-﻿using System;
-using VideoLibrary;
-using YoutubeMp4DownloaderLibrary.Model.UI.Text.Interfaces;
+﻿using YoutubeMp4DownloaderLibrary.Model.UI.Text.Interfaces;
 
 namespace YoutubeMp4DownloaderLibrary.Model.UI.Text.DataFile
 {
@@ -11,9 +9,9 @@ namespace YoutubeMp4DownloaderLibrary.Model.UI.Text.DataFile
             return "No data";
         }
         
-        public string GetData(YouTubeVideo view)
+        public string GetData(YoutubeExplode.Videos.Video video)
         {
-            return view.FullName.Replace(".mp4", "");
+            return video.Title;
         }
     }
 }

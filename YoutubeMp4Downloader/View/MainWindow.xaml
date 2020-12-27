@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:YoutubeMp4Downloader"
         xmlns:mainviewmodel="clr-namespace:YoutubeMp4DownloaderLibrary.ViewModel;assembly=YoutubeMp4DownloaderLibrary"
         mc:Ignorable="d"
-        Width="600" Height="525" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Width="600" Height="580" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.DataContext>
         <mainviewmodel:MainViewModel/>
     </Window.DataContext>
@@ -22,27 +22,18 @@
         </Grid>
         <Grid Height="200" Background="#ECE9E4">
             <StackPanel VerticalAlignment="Center">
-                <Grid Height="70" HorizontalAlignment="Center" Width="450">
+                <Grid Height="70" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="0.5*"/>
-                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="325"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <TextBox IsReadOnly="True" Text="{Binding Path}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="22" FontWeight="Light" />
-                    <ComboBox Width="85" Grid.Row="0" Grid.Column="1" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                        <ComboBoxItem>144 p</ComboBoxItem>
-                        <ComboBoxItem>240 p</ComboBoxItem>
-                        <ComboBoxItem>360 p</ComboBoxItem>
-                        <ComboBoxItem>480 p</ComboBoxItem>
-                        <ComboBoxItem>720 p</ComboBoxItem>
-                        <ComboBoxItem>1080 p</ComboBoxItem>
-                    </ComboBox>
-                    <Button Command="{Binding Select}"  Grid.Row="0" Content="Select folder" Grid.Column="2"></Button>
-                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding StateFolder}"/>
+                    <TextBox Width="300" IsReadOnly="True" Text="{Binding Path}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="22" FontWeight="Light" />
+                    <Button Command="{Binding Select}"  Grid.Row="0" Content="Select folder" Grid.Column="1"></Button>
+                    <Label Style="{StaticResource FontLight}" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding StateFolder}"/>
                 </Grid>
                 <Grid Height="70" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
@@ -59,8 +50,8 @@
                 </Grid>
             </StackPanel>
         </Grid>
-        <Grid Background="#DEDBD6" Height="145">
-            <Grid  Width="550" Height="120">
+        <Grid Background="#DEDBD6" Height="200">
+            <Grid  Width="550" Height="180">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="125"/>
@@ -69,12 +60,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Image Grid.Column="0" Grid.RowSpan="2" Source="/View/Background/Mp4.png" Height="80"/>
+                <Image Grid.Column="0" Grid.RowSpan="3" Source="/View/Background/Mp4.png" Height="110"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource FontLight}" Text="Name:"></TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource FontLight}" Text="Size file:"></TextBlock>
-                <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="2" Style="{StaticResource FontLight}" Text="{Binding NameFile}"></TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource FontLight}" Text="{Binding SizeFile}"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource FontLight}" Text="Duration video:"></TextBlock>
+                <TextBox IsReadOnly="True" TextWrapping="Wrap" Style="{StaticResource TextBoxLight}" Grid.Row="0" Grid.Column="2" Text="{Binding NameFile}"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="2" IsReadOnly="True" TextWrapping="Wrap" Style="{StaticResource TextBoxLight}" Text="{Binding DurationVideo}"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource FontLight}" Text="Author:"></TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="2" IsReadOnly="True" TextWrapping="Wrap" Style="{StaticResource TextBoxLight}" Text="{Binding AuthorVideo}"></TextBox>
             </Grid>
         </Grid>
     </StackPanel>

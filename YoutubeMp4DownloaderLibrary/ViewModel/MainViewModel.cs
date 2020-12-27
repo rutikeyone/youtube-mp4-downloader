@@ -11,23 +11,26 @@ using YoutubeMp4DownloaderLibrary.Model.UI.Text.DataFile;
 using YoutubeMp4DownloaderLibrary.Model.UI.Text.Abstract;
 using YoutubeMp4DownloaderLibrary.ViewModel.Base;
 using System.Threading.Tasks;
-using VideoLibrary;
+using YoutubeExplode;
 
 namespace YoutubeMp4DownloaderLibrary.ViewModel
 {
+    //Данный класс определяет view model для главного окна
     public partial class MainViewModel : BaseViewModel
     {
-        private Youtube Youtube;
-        private YouTubeVideo View;
+        private string[] FileLines; //Массив необходим для работы загрузчика видео
+        private YoutubeExplode.Videos.Video Video; //Переменная для хранения видео
 
-        #region UI objects
+        #region objects
 
-        private UIClose Close;
+        private UIClose Close; //Объект для закрытия окна
         private UIText Sing;
         private Data Data;
-        private Dialog Dialog;
+        private Dialog Dialog; //Объект для выбора папки
         private UIText State;
         private DownloaderMp4 Downloader;
+        private Youtube Youtube;
+        private YoutubeClient Client;
 
         #endregion
 
@@ -52,13 +55,13 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
 
         #endregion
 
-        #region UI Size
+        #region UI Duraction
 
-        private string sizeFile = null;
-        public string SizeFile
+        private string durationVideo = null;
+        public string DurationVideo
         {
-            get => sizeFile;
-            set => SetProperty(ref sizeFile, value);
+            get => durationVideo;
+            set => SetProperty(ref durationVideo, value);
         }
 
         #endregion
@@ -92,6 +95,17 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
         {
             get => path;
             set => SetProperty(ref path, value);
+        }
+
+        #endregion
+
+        #region UI Author
+
+        private string authorVideo = null;
+        public string AuthorVideo
+        {
+            get => authorVideo;
+            set => SetProperty(ref authorVideo, value);
         }
 
         #endregion
@@ -130,21 +144,19 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
         public ICommand Download { get; set; }
 
         public bool CanDownloadExecute(object sender) => !string.IsNullOrWhiteSpace(Url) && Path != "No selected folder" && !string.IsNullOrWhiteSpace(Path);
-        /*
-         Если мы во время загрузки мы получим исключение то значит ссылка на видео некорректна 
-         уведомим об этом загружающего
 
-         */
         public async void DownloadExecute(object sender)
         {
             await Task.Run(() =>
             {
                 try
                 {
-                    View = Youtube.GetVideo(Url);
-                    NameFile = Data.GetData(new DataName(), View);
-                    SizeFile = Data.GetData(new DataSize(), View);
-                    Downloader.SaveMP3(Path, View);
+                    FileLines = Youtube.GetLine(Url);
+                    Downloader.SaveMP4(FileLines, Path);
+                    Video = Client.Videos.GetAsync(Url).Result;
+                    NameFile = Data.GetData(new DataName(), Video).Result;
+                    DurationVideo = Data.GetData(new DataDuration(), Video).Result;
+                    AuthorVideo = Data.GetData(new DataAuthor(), Video).Result;
                 }
 
                 catch
@@ -159,6 +171,7 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
         #region Constructor
         public MainViewModel()
         {
+            Client = new();
             //Initial UI objects
             Sing = new Sing();
             Close = new();
@@ -171,7 +184,8 @@ namespace YoutubeMp4DownloaderLibrary.ViewModel
             //Initial UI text
             SingText = Sing.SetData("Paste the link and click on the button to start downloading the video");
             NameFile = Data.SetInitial(new DataName());
-            SizeFile = Data.SetInitial(new DataSize());
+            DurationVideo = Data.SetInitial(new DataDuration());
+            AuthorVideo = Data.SetInitial(new DataAuthor());
             StateFolder = State.SetData("To start downloading the video, select the download folder");
 
             //Initial Command
