@@ -1,10 +1,13 @@
-# Простой загрузчик видео с Youtube
-Данное приложение, постороенное на C# и WPF, реализует простую логику загрузки видео с Youtube.
+# Simple video downloader from Youtube
 
-Проект состоит из двух частей:
-1. YoutubeMp4Downloader
-Часть проекта содержащая в себе представление главной страницы, содержит в себе MainWindow и ссылается на YoutubeMp4DownloaderLibrary.
-2. YoutubeMp4DownloaderLibrary
-Данная часть проекта определяет логику работы ViewModel и Model. Содержит в себе две папки, хранящие в себе определенную логику.
-(Подробности описаны в комментариях в коде)
+This application, built on C# and WPF, implements a simple logic for downloading videos from Youtube.
+
+This project contains two parts.
+1. The first part is YoutubeMp4Downloader.
+This part contains a view of the main window. She has the link to YoutubeMp4DownloaderLibrary.
+
+2. The second part is YoutubeMp4DownloaderLibrary
+The second part contains a view model and model.
+
+You can find more information in the comments to the code.
 
