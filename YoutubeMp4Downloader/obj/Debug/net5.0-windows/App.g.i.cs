@@ -47,7 +47,7 @@ namespace YoutubeMp4Downloader {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.9.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -59,7 +59,7 @@ namespace YoutubeMp4Downloader {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/YoutubeMp4Downloader;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/YoutubeMp4Downloader;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -73,7 +73,7 @@ namespace YoutubeMp4Downloader {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.1.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.9.0")]
         public static void Main() {
             YoutubeMp4Downloader.App app = new YoutubeMp4Downloader.App();
             app.InitializeComponent();

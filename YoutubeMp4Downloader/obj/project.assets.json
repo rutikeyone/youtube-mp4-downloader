@@ -843,19 +843,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rutikeyone\\.nuget\\packages\\": {}
+    "C:\\Users\\rutikeyone\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\YoutubeMp4Downloader.csproj",
+      "projectUniqueName": "C:\\Users\\rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\YoutubeMp4Downloader.csproj",
       "projectName": "YoutubeMp4Downloader",
-      "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\YoutubeMp4Downloader.csproj",
-      "packagesPath": "C:\\Users\\Rutikeyone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\obj\\",
+      "projectPath": "C:\\Users\\rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\YoutubeMp4Downloader.csproj",
+      "packagesPath": "C:\\Users\\rutikeyone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4Downloader\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -869,8 +874,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4DownloaderLibrary\\YoutubeMp4DownloaderLibrary.csproj": {
-              "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4DownloaderLibrary\\YoutubeMp4DownloaderLibrary.csproj"
+            "C:\\Users\\rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4DownloaderLibrary\\YoutubeMp4DownloaderLibrary.csproj": {
+              "projectPath": "C:\\Users\\rutikeyone\\source\\repos\\YoutubeMp4Downloader\\YoutubeMp4DownloaderLibrary\\YoutubeMp4DownloaderLibrary.csproj"
             }
           }
         }
@@ -902,7 +907,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
