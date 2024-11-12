@@ -4,21 +4,20 @@
 ## Description
 This application, built on C# and WPF, implements a simple logic for downloading videos from Youtube.
 
+## Features
+* `Download youtube video by link`.
+
 ## Screenshots
 
 <p align="start">
   <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/1.PNG" width="500"/>
 </p>
 
+## Video with an example of the work
+
 <p align="center">
   <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/2.PNG" width="500"/>
 </p>
- 
-
-## What functionality does the application provide to the user?
-
-### The user can:
-* Download youtube video by link
 
 ## Development Setup
 
@@ -26,14 +25,9 @@ Before you begin, you should have already downloaded the Visual Studio and set i
 
 ## Building the Code
 
-1. Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/YoutubeMp4Downloader
-
-2. Open Visual Studio.
-
-3. Click on 'Open an existing Visual Studio project'
-
-4. Browse to the directory where you cloned the repo and click OK.
-
-5. Let Visual Studio import the project.
-
-6. Clicking run button.
+* `Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/YoutubeMp4Downloader`;
+* `Open Visual Studio`;
+* `Click on 'Open an existing Visual Studio project`;
+* `Browse to the directory where you cloned the repo and click OK`;
+* `Let Visual Studio import the project`;
+* `Clicking run button`.
