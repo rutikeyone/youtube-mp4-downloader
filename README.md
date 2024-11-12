@@ -10,13 +10,13 @@ This application, built on C# and WPF, implements a simple logic for downloading
 ## Screenshots
 
 <p align="start">
-  <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/1.PNG" width="350"/>
+  <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/1.PNG" width="500"/>
 </p>
 
 ## Video with an example of the work
 
 <p align="start">
-  <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/2.PNG" width="350"/>
+  <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/2.PNG" width="500"/>
 </p>
 
 ## Development Setup
