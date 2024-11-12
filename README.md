@@ -1,10 +1,12 @@
-# Simple video downloader from Youtube
+![GitHub](https://img.shields.io/github/license/IgorVolochay/Face-recognition?style=flat-square&color=blue) &nbsp;
+# Youtube-Mp4-Downloader
 
+## Description
 This application, built on C# and WPF, implements a simple logic for downloading videos from Youtube.
 
 ## Screenshots
 
-<p align="center">
+<p align="start">
   <img src="https://github.com/RuTiKeyOne/YoutubeMp4Downloader/blob/master/doc/Screenshots/1.PNG" width="500"/>
 </p>
 
