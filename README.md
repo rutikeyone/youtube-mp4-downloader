@@ -25,7 +25,7 @@ Before you begin, you should have already downloaded the Visual Studio and set i
 
 ## Building the Code
 
-* `Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/YoutubeMp4Downloader`;
+* `Clone the repository using HTTP: git clone https://github.com/rutikeyone/youtube-mp4-downloader`;
 * `Open Visual Studio`;
 * `Click on 'Open an existing Visual Studio project`;
 * `Browse to the directory where you cloned the repo and click OK`;
